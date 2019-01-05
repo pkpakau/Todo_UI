@@ -1,0 +1,28 @@
+#header{
+    text-align:right;
+    margin: auto;
+    padding:2px;
+    font-size: 20px;
+}
+
+ul{
+    list-style-type: none;
+    margin:0x;
+    padding:0px;
+}
+
+li{
+    float:left;
+}
+
+a{
+    padding: 1.5em;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
+
+#list1{
+    width:580px;
+    padding-left: 110px;
+    text-align: left;
+}
