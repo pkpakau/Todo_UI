@@ -1,3 +1,27 @@
-<p>
-  dashboard works!
-</p>
+<!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    <div id="myDIV" class="header">
+      <h2 style="margin:5px">My To Do List</h2>
+      <input type="text" [(ngModel)]="x.inp_list" id="inp_list" placeholder="Add New Todo">
+      <button onclick="newElement()" class="addBtn">Add</button>
+    </div>
+    
+    <ul id="myUL">
+      <li>{{x.inp_list}} </li>
+      
+      <ul *ngIf="list">
+        <li *ngFor="let list of list.data">
+          <p>{{ list.first_name }} {{ list.last_name }}</p>
+        </li>
+      </ul>
+    </ul>
+    
+    
+    </body>
+</html>
+      

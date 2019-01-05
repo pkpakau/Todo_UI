@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component'
 import { ContactComponent } from './contact/contact.component'
 import { LoginComponent } from './login/login.component'
 import { RegisterComponent } from './register/register.component'
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'nav', component:NavComponent},
   {path: 'contact', component:ContactComponent},
   {path: 'register', component:RegisterComponent},
-  {path: 'login', component:LoginComponent}
+  {path: 'login', component:LoginComponent},
+  {path: 'dashboard', component:DashboardComponent}
   
 ];
 
