@@ -15,8 +15,22 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import {FlashMessagesModule} from 'angular2-flash-messages/module';
+
 import { DblistService } from './dblist.service';
+import {
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatToolbarModule,
+  MatExpansionModule,
+  MatProgressSpinnerModule,
+  MatPaginatorModule
+} from "@angular/material";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+/*import { AuthInterceptor } from "./form/auth-interceptor";
+*/
 
 @NgModule({
   declarations: [
@@ -27,16 +41,26 @@ import { DblistService } from './dblist.service';
     ContactComponent,
     HomeComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
-  ],
-  providers: [
+    ReactiveFormsModule,
+    MatInputModule,
+    MatCardModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+    FlashMessagesModule.forRoot()
+    ],
+  providers: [/*{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},*/
     DblistService
   ],
   bootstrap: [AppComponent]

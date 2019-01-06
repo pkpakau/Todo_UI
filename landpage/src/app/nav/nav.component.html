@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -10,9 +10,9 @@
       <li id="list1"><a routerLink="/">{{title}}</a></li>
       <li><a routerLink="/about" >About</a></li>
       <li><a routerLink="/contact" >Contact</a></li>
-      <li><a routerLink="/register" >Sign Up</a></li>
-      <li><a routerLink="/login" >Login</a></li>
-      <li><a routerLink="/" >Log out</a></li>
+      <li *ngIf="!userIsAuthenticated"><a routerLink="/register" >Sign Up</a></li>
+      <li *ngIf="!userIsAuthenticated"><a routerLink="/login" >Login</a></li>
+      <button *ngIf="userIsAuthenticated">Log out</button>
   
     </ul>
   </nav>
@@ -20,3 +20,28 @@
 
 </body>
 </html>
+-->
+
+  <!--Navbar start-->
+  <nav class="navbar navbar fixed-top navbar-expand-lg navbar-light bg-default shadow-sm p-3 mb-8 rounded" style="box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.1), 0 6px 8px 0 rgba(0, 0, 0, 0.19);background-color:white;padding:6px">
+
+    <a class="navbar-brand btn btn-primary text-white" routerLink='/'><b>Todo App</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="background-color:white">
+      <ul class="navbar-nav navbar-right">
+        
+        
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink='/register'><b>Register</b></a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink='/login'><b>Login</b></a>
+        </li>
+        
+
+      </ul>
+    </div>
+</nav>
+<br><br><br><br>

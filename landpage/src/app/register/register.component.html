@@ -1,29 +1,72 @@
-<div class="registerpage">
-<form>
-  <div class="container">
+<!--<div class="registerpage">
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+
+    <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
     <hr>
 
 
+    <mat-form-field>
     <label for="fullname"><b>Full Name:</b></label>
-    <input type="text" placeholder="Enter your full name" name="fname" required>
+    <input matInput type="text"ngModel  #fullnameInput="ngModel" name="fullname" required>
+    <div class="error"><mat-error *ngIf="fullnameInput.invalid" ><b>Enter valid Name</b></mat-error></div>
+    </mat-form-field>
 
+    <mat-form-field>
     <label for="email"><b>Email</b></label>
-    <input type="email" placeholder="Enter Email" name="email" required>
+    <input matInput type="email" ngModel  #emailInput="ngModel" name="email" required>
+    <div class="error"><mat-error *ngIf="emailInput.invalid" ><b>Enter valid email</b></mat-error></div>
+    </mat-form-field>
 
+    <mat-form-field>
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input matInput type="password" ngModel  #passwordInput="ngModel" name="password" required>
+    <div class="error"><mat-error *ngIf="passwordInput.invalid" ><b>Enter valid password</b></mat-error></div>
+    </mat-form-field>
 
+    <mat-form-field>
     <label for="name"><b>Phone number</b></label>
-    <input type="tel" pattern=".{10,10}" required title="10 characters" name="phone" required>
+    <input matInput type="tel" ngModel pattern=".{10,10}" #telInput="ngModel" required title="10 characters" name="phone" required>
+    <div class="error"><mat-error *ngIf="telInput.invalid" ><b>Enter valid Contact Number </b></mat-error></div>
+    </mat-form-field>
     <hr>
 
-    <button type="submit" class="registerbtn">Register</button>
+    <button mat-raised-button type="submit" class="registerbtn" *ngIf="!isLoading">Register</button>
   </div>
   
   <div class="container signin">
     <p>Already have an account? <a routerLink='/login'>Sign in</a>.</p>
   </div>
 </form>
+</mat-card>
+</div>-->
+
+
+
+
+<div class="container">
+  <div class="container pcard">
+      <h3 style="color:gray"><b>Register</b></h3>
+      <hr>
+      <form (submit)="onRegisterSubmit()">
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="name" name="name" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" [(ngModel)]="username" name="username"  placeholder="Username">
+        </div>
+        
+          <div class="form-group">
+            <input type="email" class="form-control" [(ngModel)]="email" name="email"  placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" [(ngModel)]="password" name="password"  placeholder="Password">
+          </div>
+          <button type="submit" class="btn btn-primary"><b>Register</b></button>
+      </form>
+
+  </div>
 </div>
