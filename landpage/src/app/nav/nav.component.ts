@@ -10,7 +10,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class NavComponent implements OnInit, OnDestroy {
   title="To Do list"
 
-  userIsAuthenticated=false;
+  userIsAuthenticated=true;
   private authListenerSubs:Subscription;
 
   constructor(private AuthServiceService:AuthServiceService) { }

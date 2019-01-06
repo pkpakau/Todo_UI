@@ -40,7 +40,10 @@
           <a class="nav-link" routerLink='/login'><b>Login</b></a>
         </li>
         
-        <button *ngIf="userIsAuthenticated">Log out</button>
+        <li class="nav-item" *ngIf="userIsAuthenticated" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+          <a class="nav-link" routerLink="/" >Profile</a>
+        </li>
+        <button routerLink="/" *ngIf="userIsAuthenticated">Log out</button>
 
       </ul>
     </div>
