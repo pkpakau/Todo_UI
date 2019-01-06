@@ -10,6 +10,8 @@ import { Subject } from 'rxjs';
 export class AuthServiceService {
   private token:string;
   private authStatusListener=new Subject<boolean>();
+  private isAuthenticated = false;
+
 
   constructor(private http:HttpClient) { }
 
@@ -19,6 +21,10 @@ export class AuthServiceService {
   
   getAuthStatusListener(){
     return this.authStatusListener.asObservable();
+  }
+
+  getIsAuth() {
+    return this.isAuthenticated;
   }
 
   createUser(fullname:string, email: string, password: string, phone:Int32Array) {

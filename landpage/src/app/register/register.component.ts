@@ -1,9 +1,9 @@
-import { AuthServiceService } from './../auth-service.service';
-import { Component, OnInit } from '@angular/core';
+/*import { AuthServiceService } from './../auth-service.service';
+*/import { Component, OnInit } from '@angular/core';
 import{NgForm} from '@angular/forms'
-import { ValidateService } from './../validate.service';
+import { ValidateService } from 'src/app/auth/validate.service';
 import { FlashMessagesService} from 'angular2-flash-messages';
-import { AuthService } from './../auth.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Component({

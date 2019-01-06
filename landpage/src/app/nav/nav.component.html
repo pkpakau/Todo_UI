@@ -33,13 +33,14 @@
       <ul class="navbar-nav navbar-right">
         
         
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <li class="nav-item" *ngIf="!userIsAuthenticated" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" routerLink='/register'><b>Register</b></a>
         </li>
-        <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <li class="nav-item" *ngIf="!userIsAuthenticated" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
           <a class="nav-link" routerLink='/login'><b>Login</b></a>
         </li>
         
+        <button *ngIf="userIsAuthenticated">Log out</button>
 
       </ul>
     </div>
